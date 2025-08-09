@@ -13,12 +13,11 @@ import java.time.LocalDateTime;
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public abstract class BaseClass {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
 
     @Temporal(TemporalType.TIMESTAMP)
